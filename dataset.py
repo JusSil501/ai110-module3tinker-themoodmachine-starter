@@ -23,6 +23,23 @@ POSITIVE_WORDS = [
     "chill",
     "relaxed",
     "amazing",
+    # expanded: slang and common positives
+    "best",
+    "proud",
+    "thrilled",
+    "fire",      # slang for excellent
+    "lit",       # slang for exciting
+    "stoked",
+    "hyped",
+    "blessed",
+    "grateful",
+    "winning",
+    # emoji signals
+    "😊",
+    "😄",
+    "🎉",
+    "❤️",
+    "🔥",
 ]
 
 NEGATIVE_WORDS = [
@@ -36,6 +53,23 @@ NEGATIVE_WORDS = [
     "stressed",
     "hate",
     "boring",
+    # expanded: slang and common negatives
+    "failed",
+    "exhausted",
+    "meh",
+    "ugh",
+    "miserable",
+    "drained",
+    "frustrated",
+    "dread",
+    "sick",      # context-dependent; treated as negative here
+    "rough",
+    # emoji signals
+    "😭",
+    "😤",
+    "😡",
+    "💔",
+    "🙄",        # eye-roll — often marks sarcasm or annoyance
 ]
 
 # ---------------------------------------------------------------------
@@ -50,6 +84,19 @@ SAMPLE_POSTS = [
     "This is fine",
     "So excited for the weekend",
     "I am not happy about this",
+    # --- new posts added ---
+    "Best day ever I literally cannot stop smiling 😊",           # easy positive
+    "Failed my exam and missed the bus ugh",                       # easy negative
+    "Lowkey stressed but the vibe is good today",                  # mixed: stress + good
+    "I love when my alarm goes off on a Saturday 🙄",             # sarcasm — rule-based trap
+    "Exhausted and drained but so proud we shipped it 🎉",        # mixed: negative + positive
+    "no cap this is straight fire 🔥",                            # slang positive
+    "Feeling meh, nothing special going on",                       # neutral/flat
+    "So sick of everything honestly 😤",                           # negative (sick = ill here)
+    # --- sensitivity test posts ---
+    "Not bad at all, actually kind of fun",                        # negation flips bad -> positive
+    "I never want to do that again 😭",                            # negation + emoji, clear negative
+    "Whatever, it is what it is",                                  # flat neutral
 ]
 
 # Human labels for each post above.
@@ -65,6 +112,19 @@ TRUE_LABELS = [
     "neutral",   # "This is fine"
     "positive",  # "So excited for the weekend"
     "negative",  # "I am not happy about this"
+    # --- new labels ---
+    "positive",  # "Best day ever I literally cannot stop smiling 😊"
+    "negative",  # "Failed my exam and missed the bus ugh"
+    "mixed",     # "Lowkey stressed but the vibe is good today"
+    "negative",  # "I love when my alarm goes off on a Saturday 🙄"  (sarcasm)
+    "mixed",     # "Exhausted and drained but so proud we shipped it 🎉"
+    "positive",  # "no cap this is straight fire 🔥"
+    "neutral",   # "Feeling meh, nothing special going on"
+    "negative",  # "So sick of everything honestly 😤"
+    # --- sensitivity test labels ---
+    "positive",  # "Not bad at all, actually kind of fun"
+    "negative",  # "I never want to do that again 😭"
+    "neutral",   # "Whatever, it is what it is"
 ]
 
 # TODO: Add 5-10 more posts and labels.
